@@ -14,23 +14,17 @@ import {Utils} from "@recon/Utils.sol";
 
 // Your deps
 import "src/Counter.sol";
+import "src/Second.sol";
 
 abstract contract Setup is BaseSetup, ActorManager, AssetManager, Utils {
     Counter counter;
-
+    Second second;
+    
     /// === Setup === ///
     /// This contains all calls to be performed in the tester constructor, both for Echidna and Foundry
     function setup() internal virtual override {
-        // New Actor, beside address(this)
-        _addActor(address(0x411c3));
-        _newAsset(18); // New 18 decimals token
-
-        counter = new Counter();
-
-        // Mints to all actors and approves allowances to the counter
-        address[] memory approvalArray = new address[](1);
-        approvalArray[0] = address(counter);
-        _finalizeAssetDeployment(_getActors(), approvalArray, type(uint88).max);
+        counter = new Counter(); // TODO: Add parameters here
+        second = new Second(); // TODO: Add parameters here
     }
 
     /// === MODIFIERS === ///

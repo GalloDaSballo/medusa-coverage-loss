@@ -1,0 +1,27 @@
+{
+  "out/Counter.sol/Counter.json": {
+    "functions": [
+      {
+        "signature": "increment()",
+        "actor": "actor",
+        "mode": "normal"
+      },
+      {
+        "signature": "setNumber(uint256)",
+        "actor": "actor",
+        "mode": "normal"
+      }
+    ],
+    "separated": true
+  },
+  "out/Second.sol/Second.json": {
+    "functions": [
+      {
+        "signature": "increment()",
+        "actor": "actor",
+        "mode": "normal"
+      }
+    ],
+    "separated": true
+  }
+}

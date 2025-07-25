@@ -10,7 +10,9 @@ import {vm} from "@chimera/Hevm.sol";
 // Helpers
 import {Panic} from "@recon/Panic.sol";
 
-abstract contract AdminTargets is
+import "src/Counter.sol";
+
+abstract contract CounterTargets is
     BaseTargetFunctions,
     Properties
 {
@@ -18,4 +20,12 @@ abstract contract AdminTargets is
 
 
     /// AUTO GENERATED TARGET FUNCTIONS - WARNING: DO NOT DELETE OR MODIFY THIS LINE ///
+
+    function counter_increment() public asActor {
+        counter.increment();
+    }
+
+    function counter_setNumber(uint256 newNumber) public asActor {
+        counter.setNumber(newNumber);
+    }
 }

@@ -13,8 +13,6 @@ import {TargetFunctions} from "./TargetFunctions.sol";
 contract CryticToFoundry is Test, TargetFunctions, FoundryAsserts {
     function setUp() public {
         setup();
-
-        targetContract(address(this));
     }
 
     // forge test --match-test test_crytic -vvv
